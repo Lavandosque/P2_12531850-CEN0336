@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+
+# Inicialização de variáveis
+total = 0            
+contador_notas = 0   
+
+# Loop enquanto o número de notas inseridas for menor que 10
+while contador_notas < 10:
+    nota = input("Digite uma nota: ")  # Solicita ao usuário que digite uma nota
+    try: 
+        # Tenta converter a entrada para um número decimal (float) e adiciona à soma total
+        total += float(nota)
+        contador_notas += 1  # Incrementa o contador de notas
+    except ValueError as e:
+        # Se ocorrer um erro ao tentar converter para float, exibe uma mensagem de erro
+        print(f"Erro: {e}" + "\nAs notas devem ser dígitos")
+
+# Calcula a média das notas e exibe o resultado
+media = total / 10
+print(f"A média das notas é: {media}")
